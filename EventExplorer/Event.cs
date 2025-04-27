@@ -9,9 +9,9 @@ namespace EventExplorer
 {
     public class Event
     {
-		private string _eventID;
+		private int _eventID;
 
-		public string EventID
+		public int EventID
 		{
 			get { return _eventID; }
 			set { _eventID = value; }
@@ -48,6 +48,47 @@ namespace EventExplorer
 			get { return _location; }
 			set { _location = value; }
 		}
+
+		private float _minPrice;
+
+		public float MinPrice
+		{
+			get { return _minPrice; }
+			set { _minPrice = value; }
+		}
+
+		private bool _isFree;
+
+		public bool IsFree
+		{
+			get { return _isFree; }
+			set { _isFree = value; }
+		}
+
+		private Category _category;
+
+        public Category EventCategory
+		{
+			get { return _category; }
+            set { _category = value; }
+        }
+
+		private int _imageURL;
+
+		public int ImageURL
+		{
+			get { return _imageURL; }
+			set { _imageURL = value; }
+		}
+
+		private string _eventURL;
+
+		public string EventURL
+		{
+			get { return _eventURL; }
+			set { _eventURL = value; }
+		}
+
 
 	}
 }
