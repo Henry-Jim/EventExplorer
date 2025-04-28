@@ -9,9 +9,9 @@ namespace EventExplorer
 {
     public class Event
     {
-		private int _eventID;
+		private string _eventID;
 
-		public int EventID
+		public string EventID
 		{
 			get { return _eventID; }
 			set { _eventID = value; }
@@ -23,6 +23,14 @@ namespace EventExplorer
 		{
 			get { return _title; }
 			set { _title = value; }
+		}
+
+		private List<string> _aliases;
+
+		public List<string> Aliases
+		{
+			get { return _aliases; }
+			set { _aliases = value; }
 		}
 
 		private string _description;
@@ -87,6 +95,30 @@ namespace EventExplorer
 		{
 			get { return _eventURL; }
 			set { _eventURL = value; }
+		}
+
+		private string _accessibilityInfo;
+
+		public string AccessibilityInfo
+		{
+			get { return _accessibilityInfo; }
+			set { _accessibilityInfo = value; }
+		}
+
+		private List<string> _tags;
+
+		public List<string> EventTags
+		{
+			get { return _tags; }
+			set { _tags = value; }
+		}
+
+		private bool _isFamilyFriendy;
+
+		public bool IsFamilyFriendly
+		{
+			get { return _isFamilyFriendy; }
+			set { _isFamilyFriendy = value; }
 		}
 
 

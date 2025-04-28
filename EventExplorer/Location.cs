@@ -48,5 +48,21 @@ namespace EventExplorer
 			set { _venueName = value; }
 		}
 
+		private float _eventLongtitude;
+
+		public float EventLongtitude
+		{
+			get { return _eventLongtitude; }
+			set { _eventLongtitude = value; }
+		}
+
+		private float _eventLatitude;
+
+		public float EventLatitude
+		{
+			get { return _eventLatitude; }
+			set { _eventLatitude = value; }
+		}
+
 	}
 }
