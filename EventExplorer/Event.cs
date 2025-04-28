@@ -81,9 +81,9 @@ namespace EventExplorer
             set { _category = value; }
         }
 
-		private int _imageURL;
+		private string _imageURL;
 
-		public int ImageURL
+		public string ImageURL
 		{
 			get { return _imageURL; }
 			set { _imageURL = value; }
