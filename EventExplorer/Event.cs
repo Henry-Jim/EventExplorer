@@ -9,9 +9,9 @@ namespace EventExplorer
 {
     public class Event
     {
-		private string _eventID;
+		private int _eventID;
 
-		public string EventID
+		public int EventID
 		{
 			get { return _eventID; }
 			set { _eventID = value; }

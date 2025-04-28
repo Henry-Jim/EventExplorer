@@ -8,36 +8,12 @@ namespace EventExplorer
 {
     internal class User
     {
-		private int _userID;
-
-		public int UserID
-		{
-			get { return _userID; }
-			set { _userID = value; }
-		}
-
 		private string _username;
 
 		public string Username
 		{
 			get { return _username; }
 			set { _username = value; }
-		}
-
-		private string _userEmail;
-
-		public string UserEmail
-		{
-			get { return _userEmail; }
-			set { _userEmail = value; }
-		}
-
-		private string userPassword;
-
-		public string UserPassword
-		{
-			get { return userPassword; }
-			set { userPassword = value; }
 		}
 
 		private List<City> _preferredLocation;
