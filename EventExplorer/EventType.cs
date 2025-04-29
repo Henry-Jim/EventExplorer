@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventExplorer
 {
-    public enum Type
+    public enum EventType
     {
         Online,
         Offline,

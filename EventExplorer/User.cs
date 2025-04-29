@@ -8,28 +8,28 @@ namespace EventExplorer
 {
     internal class User
     {
-		private string _username;
+		private string _name;
 
-		public string Username
+		public string Name
 		{
-			get { return _username; }
-			set { _username = value; }
+			get { return _name; }
+			set { _name = value; }
 		}
 
-		private List<City> _preferredLocation;
+		private List<City> _preferredLocations;
 
-		public List<City> PreferredLocation
+		public List<City> PreferredLocations
 		{
-			get { return _preferredLocation; }
-			set { _preferredLocation = value; }
+			get { return _preferredLocations; }
+			set { _preferredLocations = value; }
 		}
 
-		private List<Category> _preferredCategory;
+		private List<Category> _preferredCategories;
 
-		public List<Category> PreferredCategory
+		public List<Category> PreferredCategories
 		{
-			get { return _preferredCategory; }
-			set { _preferredCategory = value; }
+			get { return _preferredCategories; }
+			set { _preferredCategories = value; }
 		}
 
 		private List<string> _savedEvents;

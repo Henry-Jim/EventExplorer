@@ -41,20 +41,20 @@ namespace EventExplorer
 			set { _description = value; }
 		}
 
-		private DateTime _date;
+		private DateTime _startTime;
 
-		public DateTime Date
+		public DateTime StartTime
 		{
-			get { return _date; }
-			set { _date = value; }
+			get { return _startTime; }
+			set { _startTime = value; }
 		}
 
-		private DateTime _time;
+		private DateTime _endTime;
 
-		public DateTime Time
+		public DateTime EndTime
 		{
-			get { return _time; }
-			set { _time = value; }
+			get { return _endTime; }
+			set { _endTime = value; }
 		}
 
 
@@ -130,9 +130,9 @@ namespace EventExplorer
 			set { _isFamilyFriendy = value; }
 		}
 
-		private Type _type;
+		private EventType _type;
 
-		public Type EventType
+		public EventType EventType
 		{
 			get { return _type; }
 			set { _type = value; }
