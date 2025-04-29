@@ -49,6 +49,15 @@ namespace EventExplorer
 			set { _date = value; }
 		}
 
+		private DateTime _time;
+
+		public DateTime Time
+		{
+			get { return _time; }
+			set { _time = value; }
+		}
+
+
 		private Location _location;
 
 		public Location EventLocation
@@ -121,6 +130,13 @@ namespace EventExplorer
 			set { _isFamilyFriendy = value; }
 		}
 
+		private Type _type;
+
+		public Type EventType
+		{
+			get { return _type; }
+			set { _type = value; }
+		}
 
 	}
 }

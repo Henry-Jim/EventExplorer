@@ -16,6 +16,7 @@ namespace EventExplorer
         Sports,
         Social,
         Wellness,
+        Technology,
         Other
     }
 }
