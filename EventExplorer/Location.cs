@@ -48,20 +48,20 @@ namespace EventExplorer
 			set { _venueName = value; }
 		}
 
-		private double _eventLongtitude;
+        private double _eventLatitude;
+
+        public double EventLatitude
+        {
+            get { return _eventLatitude; }
+            set { _eventLatitude = value; }
+        }
+
+        private double _eventLongtitude;
 
 		public double EventLongtitude
 		{
 			get { return _eventLongtitude; }
 			set { _eventLongtitude = value; }
-		}
-
-		private double _eventLatitude;
-
-		public double EventLatitude
-		{
-			get { return _eventLatitude; }
-			set { _eventLatitude = value; }
 		}
 
 	}

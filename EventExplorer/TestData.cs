@@ -25,8 +25,8 @@ namespace EventExplorer
                 City = "Los Angeles",
                 PostalCode = "90001",
                 VenueName = "Staples Center",
+                EventLatitude = 34.043,
                 EventLongtitude = -118.265,
-                EventLatitude = 34.043
             };
             e1.MinPrice = 50.0f;
             e1.EventCategory = Category.Arts;
@@ -50,8 +50,8 @@ namespace EventExplorer
                 City = "Northamptonshire",
                 PostalCode = "NN12 8TN",
                 VenueName = "Silverstone Circuit",
-                EventLongtitude = -0.880,
-                EventLatitude = 52.073
+                EventLatitude = 52.073,
+                EventLongtitude = -0.880
             };
             e2.MinPrice = 100.0f;
             e2.EventCategory = Category.Sports;
@@ -75,8 +75,8 @@ namespace EventExplorer
                 City = "San Francisco",
                 PostalCode = "94105",
                 VenueName = "Tech Convention Center",
+                EventLatitude = 37.774,
                 EventLongtitude = -122.419,
-                EventLatitude = 37.774
             };
             e3.MinPrice = 0.0f;
             e3.EventCategory = Category.Technology;
