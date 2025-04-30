@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace EventExplorer
 {
-    internal class User
+    public class User
     {
 		private string _name;
 
@@ -32,12 +32,20 @@ namespace EventExplorer
 			set { _preferredCategories = value; }
 		}
 
-		private List<string> _savedEvents;
+		private List<Event> _savedEvents;
 
-		public List<string> SavedEvents
+		public List<Event> SavedEvents
 		{
 			get { return _savedEvents; }
 			set { _savedEvents = value; }
+		}
+
+		private List<Event> _likedEvents;
+
+		public List<Event> LikedEvents
+		{
+			get { return _likedEvents; }
+			set { _likedEvents = value; }
 		}
 
 	}
