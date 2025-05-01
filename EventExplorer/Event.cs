@@ -74,14 +74,6 @@ namespace EventExplorer
 			set { _minPrice = value; }
 		}
 
-		private bool _isFree;
-
-		public bool IsFree
-		{
-			get { return _isFree; }
-			set { _isFree = value; }
-		}
-
 		private Category _category;
 
         public Category EventCategory

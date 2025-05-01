@@ -80,7 +80,6 @@ namespace EventExplorer
             };
             e3.MinPrice = 0.0f;
             e3.EventCategory = Category.Technology;
-            e3.IsFree = true;
             e3.EventType = EventType.Hybrid;
             e3.EventTags = new List<string> { "Coding", "Hackathon", "Innovation" };
             e3.ImageURL = "https://example.com/image3.jpg";
