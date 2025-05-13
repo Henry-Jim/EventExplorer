@@ -8,20 +8,20 @@ namespace EventExplorer
 {
     public class Location
     {
-		private string _streetNum;
+		private string _addressLine1;
 
-		public string StreetNumber
+		public string AddressLine1
 		{
-			get { return _streetNum; }
-			set { _streetNum = value; }
+			get { return _addressLine1; }
+			set { _addressLine1 = value; }
 		}
 
-		private string _streetName;
+		private string _addressLine2;
 
-		public string StreetName
+		public string AddressLine2
 		{
-			get { return _streetName; }
-			set { _streetName = value; }
+			get { return _addressLine2; }
+			set { _addressLine2 = value; }
 		}
 
 		private string _city;

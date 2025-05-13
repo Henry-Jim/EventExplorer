@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime;
 using System.Text;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace EventExplorer
@@ -18,7 +19,7 @@ namespace EventExplorer
 		}
 
 		private string _title;
-
+		
 		public string Title
 		{
 			get { return _title; }
@@ -74,9 +75,9 @@ namespace EventExplorer
 			set { _minPrice = value; }
 		}
 
-		private Category _category;
+		private string _category;
 
-        public Category EventCategory
+        public string EventCategory
 		{
 			get { return _category; }
             set { _category = value; }
@@ -106,6 +107,7 @@ namespace EventExplorer
 			set { _accessibilityInfo = value; }
 		}
 
+		// Could be genre sub-genre or cities
 		private List<string> _tags;
 
 		public List<string> EventTags
@@ -128,6 +130,14 @@ namespace EventExplorer
 		{
 			get { return _type; }
 			set { _type = value; }
+		}
+
+		private string _originalID;
+
+		public string OriginalID
+		{
+			get { return _originalID; }
+			set { _originalID = value; }
 		}
 
 	}

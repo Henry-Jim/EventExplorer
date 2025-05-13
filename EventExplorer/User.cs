@@ -48,5 +48,14 @@ namespace EventExplorer
 			set { _likedEvents = value; }
 		}
 
+		private List<Event> _postedEvents;
+
+		public List<Event> PostedEvents
+		{
+			get { return _postedEvents; }
+			set { _postedEvents = value; }
+		}
+
+
 	}
 }
