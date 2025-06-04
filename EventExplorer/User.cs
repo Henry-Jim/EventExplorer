@@ -56,6 +56,15 @@ namespace EventExplorer
 			set { _postedEvents = value; }
 		}
 
+		private List<Event> _favouriteEvents;
+
+		public List<Event> FavouriteEvents
+		{
+			get { return _favouriteEvents; }
+			set { _favouriteEvents = value; }
+		}
+
+
 
 	}
 }

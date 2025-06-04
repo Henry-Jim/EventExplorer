@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace EventExplorer.DataProviders.TicketMaster
 {
-    internal class TicketMasterService
+    public class TicketMasterService
     {
         private readonly string _apiKey;
         private readonly string _rootURL = "https://app.ticketmaster.com/discovery/v2/";
@@ -76,7 +76,7 @@ namespace EventExplorer.DataProviders.TicketMaster
         }
 
         // Get events with various optional parameters
-        public async Task<List<Event>> GetEventsAsync(string keyword = null, string classificationName = null, string city = null, string countryCode = null, string startDateTime = null, string endDateTime = null, int size = 20)
+        public async Task<List<Event>> GetEventsAsync(string keyword = null, string classificationName = null, string city = null, string countryCode = null, string startDateTime = null, string endDateTime = null, decimal? minPrice = null, int size = 20)
         {
             try
             {
@@ -119,6 +119,11 @@ namespace EventExplorer.DataProviders.TicketMaster
                 if (!string.IsNullOrEmpty(endDateTime))
                 {
                     urlBuilder.Append($"&endDateTime={Uri.EscapeDataString(endDateTime)}");
+                }
+
+                if (minPrice.HasValue)
+                {
+                    urlBuilder.Append($"&priceFrom={minPrice.Value}");
                 }
 
                 // Make the API request

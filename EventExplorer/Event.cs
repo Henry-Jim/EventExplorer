@@ -132,12 +132,20 @@ namespace EventExplorer
 			set { _type = value; }
 		}
 
-		private string _originalID;
+		private string? _originalID;
 
 		public string OriginalID
 		{
 			get { return _originalID; }
 			set { _originalID = value; }
+		}
+
+		private EventSource _eventSource;
+
+		public EventSource EventSource
+		{
+			get { return _eventSource; }
+			set { _eventSource = value; }
 		}
 
 	}

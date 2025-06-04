@@ -8,7 +8,11 @@ namespace EventExplorer
 {
     public class Location
     {
-		private string _addressLine1;
+        // Location id for the Entity Framework
+        public int LocationId { get; set; }
+
+
+        private string _addressLine1;
 
 		public string AddressLine1
 		{

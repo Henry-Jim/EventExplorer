@@ -46,15 +46,80 @@ namespace EventExplorer.DataProviders.TicketMaster
 
                 if (!string.IsNullOrEmpty(tme.Dates.Start.DateTime))
                 {
-                    bool success = System.DateTime.TryParse(tme.Dates.Start.DateTime, out DateTime startDateTime);
+                    // Try multiple date formats
+                    bool success = false;
+                    DateTime startDateTime = DateTime.MinValue;
+
+                    // Try ISO 8601 format with various options
+                    string[] formats = new string[]
+                    {
+            "yyyy-MM-ddTHH:mm:ssZ",       // Basic ISO 8601
+            "yyyy-MM-ddTHH:mm:ss.fffZ",   // ISO 8601 with milliseconds
+            "yyyy-MM-ddTHH:mm:sszzz",     // ISO 8601 with timezone offset
+            "yyyy-MM-ddTHH:mm:ss.fffzzz", // ISO 8601 with ms and timezone
+            "yyyy-MM-dd'T'HH:mm:ss'Z'",   // With quoted literals
+            "yyyy-MM-dd'T'HH:mm:ss"       // Without timezone
+                    };
+
+                    foreach (string format in formats)
+                    {
+                        success = DateTime.TryParseExact(
+                            tme.Dates.Start.DateTime,
+                            format,
+                            System.Globalization.CultureInfo.InvariantCulture,
+                            System.Globalization.DateTimeStyles.AdjustToUniversal |
+                            System.Globalization.DateTimeStyles.AssumeUniversal,
+                            out startDateTime);
+
+                        if (success) break;
+                    }
+
+                    // If specific formats didn't work, fall back to general parsing
+                    if (!success)
+                    {
+                        success = DateTime.TryParse(
+                            tme.Dates.Start.DateTime,
+                            System.Globalization.CultureInfo.InvariantCulture,
+                            System.Globalization.DateTimeStyles.AdjustToUniversal,
+                            out startDateTime);
+                    }
+
                     Console.WriteLine($"Parse success: {success}, Parsed date: {startDateTime}");
-                    myEvent.StartTime = startDateTime;
+                    myEvent.StartTime = success ? startDateTime : DateTime.MinValue;
                 }
                 else
                 {
                     Console.WriteLine("Start date is empty");
                     myEvent.StartTime = DateTime.MinValue;
                 }
+            }
+            else
+            {
+                myEvent.StartTime = DateTime.MinValue;
+            }
+
+            //EndTime
+            if (tme.Dates?.End != null)
+            {
+                if (!string.IsNullOrEmpty(tme.Dates.End.DateTime))
+                {
+                    // Use the same approach as for StartTime
+                    bool success = DateTime.TryParse(
+                        tme.Dates.End.DateTime,
+                        System.Globalization.CultureInfo.InvariantCulture,
+                        System.Globalization.DateTimeStyles.AdjustToUniversal,
+                        out DateTime endDateTime);
+
+                    myEvent.EndTime = success ? endDateTime : DateTime.MinValue;
+                }
+                else
+                {
+                    myEvent.EndTime = DateTime.MinValue;
+                }
+            }
+            else
+            {
+                myEvent.EndTime = DateTime.MinValue;
             }
 
             // Set the location
