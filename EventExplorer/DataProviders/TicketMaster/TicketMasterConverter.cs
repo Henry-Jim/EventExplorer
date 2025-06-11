@@ -31,13 +31,13 @@ namespace EventExplorer.DataProviders.TicketMaster
             Event myEvent = new Event();
 
             // Set basic properties
-            myEvent.EventID = !string.IsNullOrEmpty(tme.Id) ? Convert.ToInt32(tme.Id.GetHashCode()) : 0;
+            myEvent.ID = !string.IsNullOrEmpty(tme.Id) ? Convert.ToInt32(tme.Id.GetHashCode()) : 0;
             myEvent.Title = tme.Name;
             myEvent.Description = tme.Info;
-            myEvent.EventURL = tme.URL;
+            myEvent.URL = tme.URL;
 
             // Set the original ID
-            myEvent.OriginalID = tme.Id;
+            myEvent.OriginalId = tme.Id;
 
             // Set the start and end times
             if (tme.Dates?.Start != null)
@@ -154,7 +154,7 @@ namespace EventExplorer.DataProviders.TicketMaster
                     }
                 }
 
-                myEvent.EventLocation = location;
+                myEvent.Location = location;
             }
 
             // Set category based on classifications
@@ -166,7 +166,7 @@ namespace EventExplorer.DataProviders.TicketMaster
 
                 if (primaryClassification != null)
                 {
-                    myEvent.EventCategory = primaryClassification.Segment?.Name;
+                    myEvent.Category = primaryClassification.Segment?.Name;
 
                     // Create tags from genre and subgenre
                     List<string> tags = new List<string>();
@@ -179,7 +179,7 @@ namespace EventExplorer.DataProviders.TicketMaster
                         tags.Add(primaryClassification.SubGenre.Name);
                     }
 
-                    myEvent.EventTags = tags;
+                    myEvent.Tags = tags;
 
                     // Set family friendly flag
                     myEvent.IsFamilyFriendly = primaryClassification.Family;
@@ -205,7 +205,7 @@ namespace EventExplorer.DataProviders.TicketMaster
             myEvent.MinPrice = tme.PriceRanges?.FirstOrDefault()?.Min ?? 0;
 
             // Event type (default to Offline for physical events)
-            myEvent.EventType = EventType.Offline;
+            myEvent.Type = EventType.Offline;
 
             return myEvent;
         }

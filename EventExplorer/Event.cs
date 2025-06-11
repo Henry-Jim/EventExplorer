@@ -10,12 +10,12 @@ namespace EventExplorer
 {
     public class Event
     {
-		private int _eventID;
+		private int _id;
 
-		public int EventID
+		public int ID
 		{
-			get { return _eventID; }
-			set { _eventID = value; }
+			get { return _id; }
+			set { _id = value; }
 		}
 
 		private string _title;
@@ -61,7 +61,7 @@ namespace EventExplorer
 
 		private Location _location;
 
-		public Location EventLocation
+		public Location Location
 		{
 			get { return _location; }
 			set { _location = value; }
@@ -77,7 +77,7 @@ namespace EventExplorer
 
 		private string _category;
 
-        public string EventCategory
+        public string Category
 		{
 			get { return _category; }
             set { _category = value; }
@@ -93,7 +93,7 @@ namespace EventExplorer
 
 		private string _eventURL;
 
-		public string EventURL
+		public string URL
 		{
 			get { return _eventURL; }
 			set { _eventURL = value; }
@@ -110,7 +110,7 @@ namespace EventExplorer
 		// Could be genre sub-genre or cities
 		private List<string> _tags;
 
-		public List<string> EventTags
+		public List<string> Tags
 		{
 			get { return _tags; }
 			set { _tags = value; }
@@ -126,7 +126,7 @@ namespace EventExplorer
 
 		private EventType _type;
 
-		public EventType EventType
+		public EventType Type
 		{
 			get { return _type; }
 			set { _type = value; }
@@ -134,7 +134,7 @@ namespace EventExplorer
 
 		private string? _originalID;
 
-		public string OriginalID
+		public string OriginalId
 		{
 			get { return _originalID; }
 			set { _originalID = value; }
@@ -142,7 +142,7 @@ namespace EventExplorer
 
 		private EventSource _eventSource;
 
-		public EventSource EventSource
+		public EventSource Source
 		{
 			get { return _eventSource; }
 			set { _eventSource = value; }

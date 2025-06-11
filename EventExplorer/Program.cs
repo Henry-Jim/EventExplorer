@@ -35,15 +35,15 @@ namespace EventExplorer
                     Console.WriteLine($"\nEvent: {evt.Title}");
 
                     // Check if event has location data
-                    if (evt.EventLocation != null)
+                    if (evt.Location != null)
                     {
                         Console.WriteLine("Location data available:");
-                        Console.WriteLine($"  Venue: {evt.EventLocation.VenueName ?? "Not specified"}");
-                        Console.WriteLine($"  Address Line 1: {evt.EventLocation.AddressLine1 ?? "Not specified"}");
-                        Console.WriteLine($"  Address Line 2: {evt.EventLocation.AddressLine2 ?? "Not specified"}");
-                        Console.WriteLine($"  City: {evt.EventLocation.City ?? "Not specified"}");
-                        Console.WriteLine($"  Postal Code: {evt.EventLocation.PostalCode ?? "Not specified"}");
-                        Console.WriteLine($"  Coordinates: {evt.EventLocation.EventLatitude}, {evt.EventLocation.EventLongtitude}");
+                        Console.WriteLine($"  Venue: {evt.Location.VenueName ?? "Not specified"}");
+                        Console.WriteLine($"  Address Line 1: {evt.Location.AddressLine1 ?? "Not specified"}");
+                        Console.WriteLine($"  Address Line 2: {evt.Location.AddressLine2 ?? "Not specified"}");
+                        Console.WriteLine($"  City: {evt.Location.City ?? "Not specified"}");
+                        Console.WriteLine($"  Postal Code: {evt.Location.PostalCode ?? "Not specified"}");
+                        Console.WriteLine($"  Coordinates: {evt.Location.EventLatitude}, {evt.Location.EventLongtitude}");
                     }
                     else
                     {
@@ -122,9 +122,9 @@ namespace EventExplorer
                 Console.WriteLine("Date: Not specified");
 
             // Format location in a user-friendly way
-            if (evt.EventLocation != null)
+            if (evt.Location != null)
             {
-                var location = evt.EventLocation;
+                var location = evt.Location;
 
                 // Venue name
                 Console.WriteLine($"Venue: {location.VenueName ?? "Not specified"}");
@@ -171,7 +171,7 @@ namespace EventExplorer
             }
 
             // Category
-            Console.WriteLine($"Category: {evt.EventCategory ?? "Not specified"}");
+            Console.WriteLine($"Category: {evt.Category ?? "Not specified"}");
 
             // Price
             if (evt.MinPrice > 0)
@@ -180,8 +180,8 @@ namespace EventExplorer
                 Console.WriteLine("Price: Visit event page for pricing details");
 
             // Event URL 
-            if (!string.IsNullOrEmpty(evt.EventURL))
-                Console.WriteLine($"URL: {evt.EventURL}");
+            if (!string.IsNullOrEmpty(evt.URL))
+                Console.WriteLine($"URL: {evt.URL}");
 
             Console.WriteLine("---------------------------");
         }
