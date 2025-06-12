@@ -39,5 +39,66 @@ namespace EventExplorer
         Dudley,
         Aberdeen,
         Dundee
+
+        // American Cities
+        // Major Metropolitan Areas
+    NewYork,
+        LosAngeles,
+        Chicago,
+        Houston,
+        Philadelphia,
+        Phoenix,
+        SanAntonio,
+        SanDiego,
+        Dallas,
+        SanJose,
+
+        // Other Major Cities
+        Austin,
+        Jacksonville,
+        FortWorth,
+        Columbus,
+        Charlotte,
+        SanFrancisco,
+        Indianapolis,
+        Seattle,
+        Denver,
+        WashingtonDC,
+
+        // Regional Centers
+        Boston,
+        ElPaso,
+        Detroit,
+        Nashville,
+        Portland,
+        Memphis,
+        OklahomaCity,
+        LasVegas,
+        Louisville,
+        Baltimore,
+
+        // Additional Important Cities
+        Milwaukee,
+        Albuquerque,
+        Tucson,
+        Fresno,
+        Sacramento,
+        KansasCity,
+        Mesa,
+        Atlanta,
+        Omaha,
+        ColoradoSprings,
+
+        // State Capitals & Other Notable Cities
+        Raleigh,
+        Miami,
+        VirginiaBeach,
+        Oakland,
+        Minneapolis,
+        Tulsa,
+        Tampa,
+        Arlington,
+        NewOrleans,
+        Wichita
     }
 }

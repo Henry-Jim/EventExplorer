@@ -174,10 +174,76 @@ namespace EventExplorerWebApp.Data
         // Get events by category
 		public async Task<List<Event>> GetEventsByCategoryAsync(string category)
 		{
-            throw new NotImplementedException("GetEventsByCategoryAsync method is not implemented yet.");
+			return await _context.Events
+				.Include(e => e.Location)
+				.Where(e => e.Category == category)
+				.OrderBy(e => e.StartTime)
+				.ToListAsync();
         }
 
-        public List<Event> SearchByProximity(City city, double radius, EventType eventType)
+		// Get events by city
+		public async Task<List<Event>> GetEventByCityAsync(string city)
+		{
+			return await _context.Events
+				.Include(e => e.Location)
+				.Where(e => e.Location != null && e.Location.City == city)
+				.OrderBy(e => e.StartTime)
+				.ToListAsync();
+        }
+
+        // Get events by source (e.g., TicketMaster, Internal etc.)
+		public async Task<List<Event>> GetEventBySourceAsync(EventSource source)
+		{
+			return await _context.Events
+				.Include(e => e.Location)
+				.Where(e => e.Source == source)
+				.OrderBy(e => e.StartTime)
+				.ToListAsync();
+		}
+
+        // Get events by date range
+		public async Task<List<Event>> GetEventsInDateRangeAsync(DateTime startDate, DateTime endDate)
+		{
+			return await _context.Events
+				.Include(e => e.Location)
+				.Where(e => e.StartTime >= startDate && e.EndTime <= endDate)
+				.OrderBy(e => e.StartTime)
+				.ToListAsync();
+		}
+
+		// Get upcoming events 
+		public async Task<List<Event>> GetUpcomingEventsAsync(int count = 20)
+		{
+			return await _context.Events
+				.Include(e => e.Location)
+				.Where(e => e.StartTime > DateTime.Now)
+				.OrderBy(e => e.StartTime)
+				.Take(count)
+				.ToListAsync();
+		}
+
+        // Get events by type (Online, Offline, Hybrid)
+		public async Task<List<Event>> GetEventsByTypeAsync(EventType eventType)
+		{
+			return await _context.Events
+				.Include(e => e.Location)
+				.Where(e => e.Type == eventType)
+				.OrderBy(e => e.StartTime)
+				.ToListAsync();
+		}
+
+        // Get Family Friendly events
+		public async Task<List<Event>> GetFamilyFriendlyEventsAsync()
+		{
+			return await _context.Events
+				.Include(e => e.Location)
+				.Where(e => e.IsFamilyFriendly)
+				.OrderBy(e => e.StartTime)
+				.ToListAsync();
+
+        }
+
+        public List<Event> SearchByProximity(City city, double radius, EventType? eventType = null)
 		{
 			throw new NotImplementedException("SearchByProximity method is not implemented yet.");
         }
