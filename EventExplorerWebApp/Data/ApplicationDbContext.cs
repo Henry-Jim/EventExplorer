@@ -8,7 +8,7 @@ namespace EventExplorerWebApp.Data
     {
         public DbSet<Event> Events { get; set; }
         public DbSet<Location> Location { get; set; }
-        public DbSet<User> User { get; set; }
+     //   public DbSet<User> User { get; set; }
 
     }
 }

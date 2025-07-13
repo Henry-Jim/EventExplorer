@@ -38,7 +38,7 @@ namespace EventExplorer
         Luton,
         Dudley,
         Aberdeen,
-        Dundee
+        Dundee,
 
         // American Cities
         // Major Metropolitan Areas
